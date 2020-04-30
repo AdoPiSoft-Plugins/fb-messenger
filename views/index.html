@@ -35,6 +35,19 @@
           </div>
         </div>
         <br/>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="input-demo checkbox-demo">
+              <label class="checkbox-inline custom-checkbox nowrap">
+                <input type="checkbox" ng-model="$parent.hide_on_offline">
+                <span>
+                  Hide button if disconnected
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <br/>
         <button type="submit" ng-disabled="fb_form.$invalid" class="btn btn-primary">Save Changes</button>
       </form>
     </div>

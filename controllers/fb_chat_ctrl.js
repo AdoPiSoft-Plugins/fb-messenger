@@ -8,7 +8,8 @@ exports.get = async (req, res, next) => {
     res.json({
       facebook: cfg.facebook || "712346362287169",
       position: cfg.position || "left",
-      call_to_action: cfg.call_to_action || "Message us"
+      call_to_action: cfg.call_to_action || "Message us",
+      hide_on_offline: cfg.hide_on_offline
     })
   }catch(e){
     next(e)

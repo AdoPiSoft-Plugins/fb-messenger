@@ -23,6 +23,10 @@ module.exports = (sequelize, Sequelize) => {
     position: {
       type: Sequelize.STRING
     },
+    hide_on_offline: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false
+    },
     created_at: {
       allowNull: false,
       type: Sequelize.DATE

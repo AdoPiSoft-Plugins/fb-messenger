@@ -13,15 +13,37 @@ httpGet = typeof(httpGet) == 'function'? httpGet : function(url, cb){
   xmlhttp.open("GET", url, true );
   xmlhttp.send();
 }
+function initFbChatButton(options, cb){
+  var proto = (document.location||{protocol: 'http'}).protocol, host = "getbutton.io", url = proto + "//static." + host;
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+  var x = document.getElementsByTagName('script')[0];
+  x.parentNode.insertBefore(s, x);
+  s.onload = function () {
+    WhWidgetSendButton.init(host, proto, options);
+    if(cb) cb()
+  };
+}
+
 httpGet('/fb-chat-config', function(d){
   var options = JSON.parse(d)
-  var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-  s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-  var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+  setTimeout(function(){
+    device_store.on('state', function(state){
+      if(typeof(WhWidgetSendButton)!='function')
+        initFbChatButton(options);
+      var is_connected = state.current.status == "connected";
+      if(options.hide_on_offline){
+        var el = document.getElementById("wh-widget-send-button");
+        if(is_connected)
+          el.style.display = '';
+        else
+          el.style.display = 'none';
+      }
+      
+    })
+    initFbChatButton(options, function(){
+      if(options.hide_on_offline && device_store.get().status != 'connected'){
+        document.getElementById("wh-widget-send-button").style.display = 'none';
+      }
+    })
+  }, 2000);
 })
-// var options = {
-// 		facebook: "1610138715873203", 
-// 		call_to_action: "Message us", 
-// 		position: "right", 
-// };
