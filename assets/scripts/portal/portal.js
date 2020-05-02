@@ -45,5 +45,5 @@ httpGet('/fb-chat-config', function(d){
         document.getElementById("wh-widget-send-button").style.display = 'none';
       }
     })
-  }, 2000);
+  }, 1000);
 })
