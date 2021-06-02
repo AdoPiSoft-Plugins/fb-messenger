@@ -1,3 +1,14 @@
+1.0.2
+===================
+* Fix error causing the icon to not show
+* Compatibility update for AdoPiSoft v5
+
+
+1.0.1
+===================
+* Compatibility update for AdoPiSoft v4.1.3
+
+
 1.0.0
 ===================
 * Initial implementation of Facebook messenger button plugin for AdoPiSoft Hotspot
@@ -7,6 +18,3 @@
 * You also have option to allow messenger access for users with no running session
   - Go to network -> Interfaces page and add "Allowed Host"
 
-1.0.1
-===================
-* Compatibility update for AdoPiSoft v4.1.3
