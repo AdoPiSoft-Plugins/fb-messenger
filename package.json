@@ -1,0 +1,23 @@
+{
+  "name": "fb-messenger",
+  "version": "1.0.2",
+  "description": "Ado FB messenger plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/adopisowifi/fb-messenger.git"
+  },
+  "keywords": [
+    "ado",
+    "fb-messenger"
+  ],
+  "author": "arnel.lenteria@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/adopisowifi/fb-messenger/issues"
+  },
+  "homepage": "https://bitbucket.org/adopisowifi/fb-messenger#readme"
+}
