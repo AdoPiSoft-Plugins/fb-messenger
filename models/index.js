@@ -1,6 +1,6 @@
 'use strict'
 
-var { dbi, machine_id } = require('../../core')
+var { dbi, machine_id } = require('plugin-core')
 var FBMessenger = require('./fb_messenger.js')
 
 var model_files = {
@@ -8,12 +8,12 @@ var model_files = {
 }
 
 exports.init = async () => {
-  if(!dbi) return
+  if (!dbi) return
   var { sequelize, Sequelize } = dbi
   var db = await sequelize.getInstance()
 
   var keys = Object.keys(model_files)
-  for(var i = 0; i < keys.length; i++){
+  for (var i = 0; i < keys.length; i++) {
     var k = keys[i]
     dbi.models[k] = model_files[k](db, Sequelize)
     await dbi.models[k].sync({alter: true})
