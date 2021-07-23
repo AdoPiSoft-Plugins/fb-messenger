@@ -4,7 +4,7 @@
   .config(function($stateProvider) {
     $stateProvider
     .state('plugins.fb_messenger', {
-      templateUrl : "/plugins/fb-messenger/views/index.html",
+      templateUrl : "/public/plugins/fb-messenger/views/index.html",
       controller: 'FBMessengerCtrl',
       url: '/fb-messenger',
       title: 'FB Messenger',
