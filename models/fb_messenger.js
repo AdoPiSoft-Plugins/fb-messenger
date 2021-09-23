@@ -11,6 +11,13 @@ var opts = {
 
 module.exports = (sequelize, Sequelize) => {
   var model = sequelize.define(model_name, {
+    id: {
+      primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV4,
+      allowNull: false,
+      unique: true
+    },
     machine_id: {
       type: Sequelize.STRING
     },
