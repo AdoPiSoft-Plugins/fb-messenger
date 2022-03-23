@@ -1,1 +1,14 @@
-(function(){"use strict";var App=angular.module("Plugins").config(function($stateProvider){$stateProvider.state("plugins.fb_messenger",{templateUrl:"/public/plugins/fb-messenger/views/index.html",controller:"FBMessengerCtrl",url:"/fb-messenger",title:"FB Messenger",sidebarMeta:{order:2}})})})();
+(function() {
+  "use strict";
+  var App = angular.module("Plugins").config(function($stateProvider) {
+    $stateProvider.state("plugins.fb_messenger", {
+      templateUrl: "/public/plugins/fb-messenger/views/index.html",
+      controller: "FBMessengerCtrl",
+      url: "/fb-messenger",
+      title: "FB Messenger",
+      sidebarMeta: {
+        order: 2
+      }
+    })
+  })
+})();
